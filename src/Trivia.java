@@ -40,7 +40,7 @@ public class Trivia {
     }
 
     // Button listeners for checking an answer and displaying the next question
-    // NO NEED TO TOUCH THIS METHOD!
+    // NO NEED TO TOUCH THIS METHOD - unless you expand it
     private static void addButtonListeners(List<TextQuestion> questions, TriviaView view) {
         view.addCheckAnswerListener(_ -> {
             // Check if an answer has been selected
@@ -52,7 +52,6 @@ public class Trivia {
 
             // Get the score
             String selectedAnswer = String.valueOf(view.getSelectedAnswer());
-            score += questions.get(currentQuestionIndex).score(selectedAnswer);
 
             // Display result
             questions.get(currentQuestionIndex).showResult(selectedAnswer, view);
