@@ -59,7 +59,12 @@ public class Trivia {
         });
 
         view.addNextButtonListener(_ -> {
-            questions.get(currentQuestionIndex).clearResultText(view);
+             // Get the score
+             String selectedAnswer = String.valueOf(view.getSelectedAnswer());
+             score += questions.get(currentQuestionIndex).score(selectedAnswer);
+
+             // Clear result text
+             questions.get(currentQuestionIndex).clearResultText(view);
 
             // Move to the next question
             currentQuestionIndex++;
